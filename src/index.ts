@@ -5,6 +5,7 @@ const authScreen =
   (password: string): RequestHandler =>
   (req, res, next) => {
     setTimeout(() => {
+      console.log(req.path, req.method);
       if (req.path === '/' && req.method === 'GET') {
         if (req.signedCookies?.auth === password) next();
         else res.sendFile(resolve(__dirname + '/../files/login.html'));
@@ -30,7 +31,6 @@ const authScreen =
       ) {
         next();
       } else {
-        console.log(req.path, req.method);
         if (
           req.signedCookies?.auth === password ||
           req.body.password === password
