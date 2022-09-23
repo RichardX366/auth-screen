@@ -7,6 +7,9 @@ const authScreen =
       if (req.path === '/' && req.method === 'GET') {
         if (req.signedCookies?.auth === password) next();
         else res.sendFile(__dirname + '/../files/login.html');
+      } else if (req.path === '/logout' && req.method === 'POST') {
+        res.clearCookie('auth');
+        res.send('success');
       } else if (req.path === '/__auth-screen.css' && req.method === 'GET') {
         res.sendFile(__dirname + '/../files/__auth-screen.css');
       } else if (req.path === '/password' && req.method === 'POST') {
