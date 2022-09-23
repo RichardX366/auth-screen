@@ -22,6 +22,8 @@ const authScreen =
           });
           res.send('success');
         } else res.send('Incorrect password!');
+      } else if ((req.path === '/__components.js' || req.path === '/__components.css') && req.method === 'GET') {
+        next();
       } else {
         if (
           req.signedCookies?.auth === password ||
