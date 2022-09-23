@@ -1,0 +1,4 @@
+node_modules/
+dist/
+__auth-screen.css
+.DS_Store

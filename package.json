@@ -1,0 +1,23 @@
+{
+  "name": "auth-screen",
+  "version": "1.0.0",
+  "description": "Package for creating express password auth.",
+  "main": "dist/index.js",
+  "author": "Richard Xiong",
+  "license": "MIT",
+  "dependencies": {
+    "cookie": "^0.5.0"
+  },
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "tsc && tailwindcss -i tailwind.css -o files/__auth-screen.css",
+    "tailwind": "tailwindcss -i tailwind.css -o files/__auth-screen.css -w"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "tailwindcss": "^3.1.8"
+  },
+  "files": [
+    "dist"
+  ]
+}
