@@ -13,6 +13,8 @@ const authScreen =
         res.send('success');
       } else if (req.path === '/__auth-screen.css' && req.method === 'GET') {
         res.sendFile(resolve(__dirname + '/../files/__auth-screen.css'));
+      } else if (req.path === '/__auth-screen.js' && req.method === 'GET') {
+        res.sendFile(resolve(__dirname + '/../files/__auth-screen.js'));
       } else if (req.path === '/password' && req.method === 'POST') {
         if (req.body.password === password) {
           res.cookie('auth', password, {
@@ -22,9 +24,13 @@ const authScreen =
           });
           res.send('success');
         } else res.send('Incorrect password!');
-      } else if ((req.path === '/__components.js' || req.path === '/__components.css') && req.method === 'GET') {
+      } else if (
+        (req.path === '/__components.js' || req.path === '/__components.css') &&
+        req.method === 'GET'
+      ) {
         next();
       } else {
+        console.log(req.path, req.method);
         if (
           req.signedCookies?.auth === password ||
           req.body.password === password
