@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Package for creating express password auth.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Richard Xiong",
   "license": "MIT",
   "dependencies": {
