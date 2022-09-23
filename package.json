@@ -1,6 +1,6 @@
 {
   "name": "auth-screen",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Package for creating express password auth.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
